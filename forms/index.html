@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>FORMS</h1>
+    <!----------------FORM CONTROL - INPUT AND LABELS---------------------------------->
+    <form action="example.com/path" method="post">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" />
+    </form>
+    <!-----------------------PLACEHOLDER--------------------------->
+    <p>
+      Placeholder Attribute. To guide users on what to enter in form elements,
+      we can include placeholder text in input fields.
+    </p>
+    <form action="example.com/path" method="post">
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" placeholder="Bob..." />
+    </form>
+    <!----------------THE NAME ATTRIBUTE---------------------------------->
+    <p>
+      To let the backend where we send our data know what each piece of data
+      represents. We do this by adding a name attribute to our inputs
+    </p>
+    <form action="example.com/path" method="post">
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" />
+    </form>
+    <!--------------------EMAIL INPUT------------------------------>
+    <p>
+      To create an email input, we use an input element with type attribute of
+      “email”:
+    </p>
+    <label for="user_email">Email Address:</label>
+    <input
+      type="email"
+      id="user_email"
+      name="email"
+      placeholder="you@example.com"
+    />
+    <!------------------PASSWORD INPUT-------------------------------->
+    <p>
+      Password input: They differ from regular text inputs in that they mask the
+      inputted data with asterisks(*) to prevent anyone from seeing what has
+      been entered.
+    </p>
+    <label for="user_password">Password:</label>
+    <input type="password" id="user_password" name="password" />
+    <!---------------------NUMBER INPUT----------------------------->
+    <p>
+      The number input only accepts number values and ignores any other
+      characters the user tries to enter.
+    </p>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" />
+
+    <!------------------------DATE INPUT-------------------------->
+    <p>
+      To collect dates from a user, we can use a date input. This input is
+      unique because it provides a better user experience for choosing dates by
+      rendering a simple date picker calendar.
+    </p>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" />
+    <!--------------------TEXT AREA------------------------------>
+    <p>
+      Text Area The text area element provides an input box that can accept text
+      that spans multiple lines like user comments and reviews. It can also be
+      resized by clicking and dragging the bottom right corner to make it bigger
+      or smaller.
+    </p>
+    <textarea>Some initial content</textarea>
+    <p>
+      Text area elements accept a couple of unique attributes that other form
+      controls do not. These are the rows and cols attributes. They allow you to
+      control the initial height(rows) and width(cols) of the text area:
+    </p>
+    <textarea rows="20" cols="60"></textarea>
+    <!----------SELECTION ELEMENTS-Select Dropdown------------------------->
+    <p>
+      The select element wraps option elements which are the options that can be
+      selected.
+    </p>
+    <p>
+      All the option elements need to have a value attribute. This value will be
+      sent to the server when the form is submitted. We can set one of the
+      options to be the default selected element when the browser first renders
+      the form by giving one of the options the selected attribute:
+    </p>
+    <select name="Car">
+      <option value="mercedes">Mercedes</option>
+      <option value="tesla">Tesla</option>
+      <option value="volvo" selected>Volvo</option>
+      <option value="bmw">BMW</option>
+      <option value="mini">Mini</option>
+      <option value="ford">Ford</option>
+    </select>
+
+    <p>
+      We may also split the list of options into groups using the optgroup
+      element. The optgroup element takes a label attribute which the browser
+      uses as the label for each group:
+    </p>
+    <select name="fashion">
+      <optgroup label="Clothing">
+        <option value="t_shirt">T-Shirts</option>
+        <option value="sweater">Sweaters</option>
+        <option value="coats">Coats</option>
+      </optgroup>
+      <optgroup label="Foot Wear">
+        <option value="sneakers">Sneakers</option>
+        <option value="boots">Boots</option>
+        <option value="sandals">Sandals</option>
+      </optgroup>
+    </select>
+
+    <!------------------RADIO BUTTONS-------------------------------->
+    <p>
+      Radio buttons allow us to create multiple options that the user can choose
+      one of. To create radio buttons, we use the ever adaptable input element
+      again with a type attribute of “radio”. We can set the default selected
+      radio button by adding the checked attribute to it:
+    </p>
+    <h1>Ticket Type</h1>
+    <div>
+      <input type="radio" id="child" name="ticket_type" value="child" />
+      <label for="child">Child</label>
+    </div>
+
+    <div>
+      <input type="radio" id="adult" name="ticket_type" value="adult" checked />
+      <label for="adult">Adult</label>
+    </div>
+
+    <div>
+      <input type="radio" id="senior" name="ticket_type" value="senior" />
+      <label for="senior">Senior</label>
+    </div>
+    <!----------------------CHECKBOXES---------------------------->
+    <p>
+      Checkboxes are similar to radio buttons in that they allow users to choose
+      from a set of predefined options. But unlike radio buttons, they allow
+      multiple options to be selected at once.
+    </p>
+
+    <h1>Pizza Toppings</h1>
+
+    <div>
+      <input type="checkbox" id="sausage" name="topping" value="sausage" />
+      <label for="sausage">Sausage</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="onions" name="topping" value="onions" />
+      <label for="onions">Onions</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="pepperoni" name="topping" value="pepperoni" />
+      <label for="pepperoni">Pepperoni</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="mushrooms" name="topping" value="mushrooms" />
+      <label for="mushrooms">Mushrooms</label>
+    </div>
+
+    <p>
+      We can also have a single checkbox when we want users to toggle if they
+      want something to be true or false. Like signing up to a newsletter when
+      they create an account for example:
+    </p>
+
+    <div>
+      <input type="checkbox" id="newsletter" name="news_letter" />
+      <label for="newsletter">Send me the news letter</label>
+    </div>
+    <p>
+      We can set checkboxes to be checked by default on page load by giving them
+      a checked attribute:
+    </p>
+    <div>
+      <input type="checkbox" id="newsletter" name="news_letter" checked />
+      <label for="newsletter">Send me the news letter</label>
+    </div>
+    <!---------------------BUTTONS----------------------------->
+    <p>
+      The button element creates clickable buttons that the user can interact
+      with to submit forms and trigger other actions.
+    </p>
+    <button>Click Me</button>
+    <p>
+      When a submit button is clicked, it will submit the form it is contained
+      within. The type attribute has value of submit by default, i.e if the type
+      is not specified or the value provided is invalid.
+    </p>
+    <button type="submit">Submit</button>
+    <p>
+      A reset button clears all the data the user has entered into the form and
+      sets all the inputs in the form back to what they were initially.
+    </p>
+    <button type="reset">Reset</button>
+    <p>
+      Generic Button The third and final button type is simply a generic button
+      that can be used for anything. It’s commonly used with JS for creating
+      interactive UI’s.
+    </p>
+    <button type="button">Click to Toggle</button>
+
+    <!-------------------Organizing Form Elements-legend------------------------------>
+    <p>
+      Fieldset Element The fieldset element is a container element that allows
+      us to group related form inputs into one logical unit.
+    </p>
+    <p>
+      Legend The legend element is used to give field sets a heading or caption
+      so the user can see what a grouping of inputs is for.
+    </p>
+    <fieldset>
+      <legend>Contact Details</legend>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="phone_number">Phone Number:</label>
+      <input type="tel" id="phone_number" name="phone_number" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+    </fieldset>
+    <br />
+    <!-------------------------------------------------->
+    <fieldset>
+      <legend>Delivery Details</legend>
+
+      <label for="street_address">Street Address:</label>
+      <input type="text" id="street_address" name="street_address" />
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" />
+
+      <label for="zip_code">Zip Code:</label>
+      <input type="text" id="zip_code" name="zip_code" />
+    </fieldset>
+    <br />
+    <!-------------------------------------------------->
+    <fieldset>
+      <legend>What would you like to drink?</legend>
+
+      <div>
+        <input type="radio" name="drink" id="coffee" value="coffee" />
+        <label for="coffee">Coffee</label>
+      </div>
+
+      <div>
+        <input type="radio" name="drink" id="tea" value="tea" />
+        <label for="tea">Tea</label>
+      </div>
+
+      <div>
+        <input type="radio" name="drink" id="soda" value="soda" />
+        <label for="soda">Soda</label>
+      </div>
+    </fieldset>
+  </body>
+</html>
+<!--------------------VALIDATIONS-Required------------->
+<p>
+  Required Validation We will often want to ensure specific fields have been
+  filled in before submitting the form, for example, the email and password in a
+  login form.
+</p>
+<form action="#" method="get">
+  <div>
+    <label for="user_email">*Email:</label>
+    <input type="email" id="user_email" name="user_email" required />
+  </div>
+  <br />
+
+  <div>
+    <label for="user_password">*Password:</label>
+    <input type="password" id="user_password" name="user_password" required />
+  </div>
+
+  <button type="submit">Login</button>
+</form>
+
+<!-------------------------MINIMUN ans MAXIMUN LENGHT------------------------------>
+
+<p>
+  To add the minimum length validation, we give the form control a minlength
+  attribute with an integer value that represents the minimum amount of
+  characters we want to allow in the form control:
+</p>
+<form action="#" method="get">
+  <div>
+    <textarea placeholder="What's happening?" minlength="3"></textarea>
+  </div>
+
+  <button type="submit">Tweet</button>
+</form>
+<br />
+<p>
+  To add a maximum length validation, we give the form control a maxlength
+  attribute with an integer value which represents the maximum amount of
+  characters we want to allow in the form control:
+</p>
+<form action="#" method="get">
+  <div>
+    <textarea placeholder="What's happening?" maxlength="20"></textarea>
+  </div>
+
+  <button type="submit">Tweet</button>
+</form>
+<!--------------------CONVINING VALIDATIONS----------------------------------->
+<p>
+  Combining Validations HTML allows us to apply as many validations as we wish
+  to a form control. For example, we can give our tweet textarea both minlength
+  and maxlength validations:
+</p>
+<form action="#" method="get">
+  <div>
+    <textarea
+      placeholder="What's happening?"
+      minlength="5"
+      maxlength="20"
+    ></textarea>
+  </div>
+
+  <button type="submit">Tweet</button>
+</form>
+<!--------------------MIN AND MAX VALIDATION----------------------------------->
+<p>
+  To add a minimum value validation, we give the form control a min attribute
+  with an integer value which represents the minimum number we want the form
+  control to accept:
+</p>
+<form action="#" method="get">
+  <div>
+    <label for="quantity">Quantity</label>
+  </div>
+  <input type="number" id="quantity" name="quantity" min="1" value="0" />
+
+  <div>
+    <button type="submit">Place Order</button>
+  </div>
+</form>
+<br />
+<form action="#" method="get">
+  <div>
+    <label for="passengers">Passengers</label>
+  </div>
+  <input type="number" id="passengers" name="passengers" max="5" value="0" />
+
+  <div>
+    <button type="submit">Book</button>
+  </div>
+</form>
+<!--------------------PATERN VALIDATION----------------------------------->
+<p>
+  To add a pattern validation, we give the form control a pattern attribute with
+  a regular expression as the value. In our example we are using the pattern
+  validation to ensure a US zip code is in the correct format. 5 numbers
+  followed by an optional dash and 4 more numbers:
+</p>
+<form action="#" method="get">
+  <div>
+    <label for="zip_code">Postal / Zip Code:</label>
+  </div>
+
+  <input
+    type="text"
+    id="zip_code"
+    name="zip_code"
+    pattern="(\d{5}([\-]\d{4})?)"
+    required
+  />
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<p>
+  Entering an incorrect zip code and submitting the form will display the
+  following validation error in the browser “Please match the requested format”.
+  This isn’t very useful since it doesn’t communicate how to fix the issue. We
+  can add a more descriptive validation message by giving our input a title
+  attribute:
+</p>
+<form action="#" method="get">
+  <div>
+    <label for="zip_code">Postal / Zip Code:</label>
+  </div>
+
+  <input
+    type="text"
+    id="zip_code"
+    name="zip_code"
+    pattern="(\d{5}([\-]\d{4})?)"
+    title="Please enter a valid zip code, example: 65251"
+    required
+  />
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<!------------------STYLING VALIDATION------------------------------------->
+<p>
+  Styling Validations We can target form controls that have passed or failed
+  validations using the :valid and :invalid pseudo-classes.
+</p>
+<form action="#" method="get">
+  <div>
+    <label for="email">*Email</label>
+  </div>
+  <input type="email" id="email" name="email" />
+
+  <div>
+    <label for="website">*Website</label>
+  </div>
+  <input type="url" id="website" name="website" />
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<p>
+  First of all, we target any valid inputs and give them a green border. Our
+  email and URL inputs initially have a green border since they are not required
+  fields and are valid. When a field is invalid, we give it a red border
+  instead. Try entering an invalid email address and URL to see how this looks.
+</p>
+<!------------------------------------------------------->
+<!------------------------------------------------------->
